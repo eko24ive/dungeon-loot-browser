@@ -5,32 +5,28 @@ import PropTypes from 'prop-types';
 import ReactSelect from 'react-select';
 
 import { setActiveDungeon as setActiveDungeonAction } from '../../ducks/activeDungeon';
-import dungeonNameMapping from '../../constants/dungeonNameMapping';
 
 import SelectWrapper from './Select.style';
 
 const mapStateToProps = state => ({
   activeDungeon: state.get('activeDungeon'),
+  availableDungeons: state.get('availableDungeons'),
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
   setActiveDungeonAction,
 }, dispatch);
 
-const options = Object.keys(dungeonNameMapping).map(key => ({
-  value: key,
-  label: dungeonNameMapping[key].name,
-}));
 
 const onChange = setActiveDungeon => ({ value }) => {
   setActiveDungeon(value);
 };
 
-const Select = ({ setActiveDungeonAction: setActiveDungeon }) => (
+const Select = ({ setActiveDungeonAction: setActiveDungeon, availableDungeons }) => (
   <SelectWrapper>
     <ReactSelect
       placeholder="Выбери данж"
-      options={options}
+      options={availableDungeons}
       onChange={onChange(setActiveDungeon)}
     />
   </SelectWrapper>
@@ -38,6 +34,7 @@ const Select = ({ setActiveDungeonAction: setActiveDungeon }) => (
 
 Select.propTypes = {
   setActiveDungeonAction: PropTypes.func.isRequired,
+  availableDungeons: PropTypes.array.isRequired,
 };
 
 export default connect(
