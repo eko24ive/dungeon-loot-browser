@@ -1,13 +1,13 @@
 {
-  "main.js": "/static/js/main.16dd7908.chunk.js",
-  "main.js.map": "/static/js/main.16dd7908.chunk.js.map",
-  "static/css/1.7732a87c.chunk.css": "/static/css/1.7732a87c.chunk.css",
-  "static/js/1.b55c0056.chunk.js": "/static/js/1.b55c0056.chunk.js",
-  "static/js/1.b55c0056.chunk.js.map": "/static/js/1.b55c0056.chunk.js.map",
-  "runtime~main.js": "/static/js/runtime~main.229c360f.js",
-  "runtime~main.js.map": "/static/js/runtime~main.229c360f.js.map",
-  "static/css/1.7732a87c.chunk.css.map": "/static/css/1.7732a87c.chunk.css.map",
-  "index.html": "/index.html",
-  "precache-manifest.d79f459da7ef5d3b750083ea8f617981.js": "/precache-manifest.d79f459da7ef5d3b750083ea8f617981.js",
-  "service-worker.js": "/service-worker.js"
+  "main.js": "/dungeon-loot-browser/static/js/main.16dd7908.chunk.js",
+  "main.js.map": "/dungeon-loot-browser/static/js/main.16dd7908.chunk.js.map",
+  "static/css/1.7732a87c.chunk.css": "/dungeon-loot-browser/static/css/1.7732a87c.chunk.css",
+  "static/js/1.15b8bfcb.chunk.js": "/dungeon-loot-browser/static/js/1.15b8bfcb.chunk.js",
+  "static/js/1.15b8bfcb.chunk.js.map": "/dungeon-loot-browser/static/js/1.15b8bfcb.chunk.js.map",
+  "runtime~main.js": "/dungeon-loot-browser/static/js/runtime~main.76fefd7b.js",
+  "runtime~main.js.map": "/dungeon-loot-browser/static/js/runtime~main.76fefd7b.js.map",
+  "static/css/1.7732a87c.chunk.css.map": "/dungeon-loot-browser/static/css/1.7732a87c.chunk.css.map",
+  "index.html": "/dungeon-loot-browser/index.html",
+  "precache-manifest.50a4e52bd78bcebd22c75652f7f64e60.js": "/dungeon-loot-browser/precache-manifest.50a4e52bd78bcebd22c75652f7f64e60.js",
+  "service-worker.js": "/dungeon-loot-browser/service-worker.js"
 }
