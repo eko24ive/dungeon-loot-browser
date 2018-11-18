@@ -2,8 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-const TableStyle = styled.table``;
-
+const TableStyle = styled.table`
+  width: 100%;
+`;
 
 export const Row = styled.tr``;
 
