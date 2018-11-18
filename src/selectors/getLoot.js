@@ -18,11 +18,48 @@ export default createSelector(
       const timeFrom = timeFilter.get('timeFrom');
       const timeTo = timeFilter.get('timeTo');
 
-      return dungeonForwards.filter(({ unixTime }) => {
+      const forwardsInTimeFrame = dungeonForwards.filter(({ unixTime }) => {
         const hours = moment(unixTime).hours();
 
-        return timeFrom >= hours && hours <= timeTo;
+        return timeFrom <= hours && hours <= timeTo;
       });
+
+      const items = {};
+      const loot = [];
+
+      forwardsInTimeFrame.forEach((forward, index) => {
+        loot.push({
+          loot: forward.loot,
+          time: forward.time,
+          index,
+        });
+
+        if (forward.item !== null) {
+          if (items[forward.item]) {
+            items[forward.item].amount += 1;
+          } else {
+            items[forward.item] = {
+              amount: 1,
+              time: forward.time,
+              index,
+            };
+          }
+        }
+      });
+
+      const totalItems = [...Object.keys(items).map(name => items[name].amount), 0]
+        .reduce((a, b) => a + b);
+
+      return {
+        items: Object.keys(items).map(name => ({
+          name,
+          time: items[name].time,
+          amount: items[name].amount,
+          index: items[name].index,
+          percent: ((items[name].amount * 100) / totalItems).toFixed(1),
+        })).sort((prev, next) => -(prev.percent - next.percent)),
+        loot,
+      };
     }
 
     return {
