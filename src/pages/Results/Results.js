@@ -8,7 +8,7 @@ import {
   Table, Row, Head, Cell,
 } from '../../elements/Table/Table';
 
-import ResultsWrapper from './Results.style';
+import ResultsWrapper, { ResultBlock } from './Results.style';
 
 const mapStateToProps = (state) => {
   const { items, loot } = getLoot(state);
@@ -24,41 +24,48 @@ const Results = ({
   loot,
 }) => (
   <ResultsWrapper>
-    <div>
+    <ResultBlock>
       <Table>
         <Head>
           <Cell>Предмет</Cell>
+          <Cell>Количество</Cell>
           <Cell>Шанс</Cell>
+          <Cell>Время</Cell>
         </Head>
         {
             items.map(({
               name,
-              chance,
+              amount,
+              percent,
+              time,
+              index,
             }) => (
-              <Row key={name}>
+              <Row key={index}>
                 <Cell>{name}</Cell>
-                <Cell>{chance}%</Cell>
+                <Cell>{amount}</Cell>
+                <Cell>{percent}%</Cell>
+                <Cell>{time}</Cell>
               </Row>
             ))
         }
       </Table>
-    </div>
-    <div>
+    </ResultBlock>
+    <ResultBlock>
       <Table>
         <Head>
           <Cell>Лут</Cell>
+          <Cell>Время</Cell>
         </Head>
-        <Row>
-          {
-            loot.map(name => (
-              <Row key={name}>
-                <Cell>{name}</Cell>
+        {
+            loot.map(({ loot: lootItems, time, index }) => (
+              <Row key={index}>
+                <Cell>{lootItems}</Cell>
+                <Cell>{time}</Cell>
               </Row>
             ))
           }
-        </Row>
       </Table>
-    </div>
+    </ResultBlock>
   </ResultsWrapper>
 );
 
