@@ -1,6 +1,4 @@
-import { Map } from 'immutable';
-
-const SET_TIME_FILTER = 'SET_TIME_FILTER';
+export const SET_TIME_FILTER = 'SET_TIME_FILTER';
 
 export const setTimeFilter = ({
   timeFrom,
@@ -11,10 +9,7 @@ export const setTimeFilter = ({
   timeTo,
 });
 
-export default function (state = Map({
-  timeFrom: 0,
-  timeTo: 24,
-}), action) {
+export default function (state, action) {
   const { timeFrom, timeTo } = action;
 
   switch (action.type) {

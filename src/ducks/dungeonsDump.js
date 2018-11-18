@@ -1,4 +1,4 @@
-const SET_DUNGEONS_DUMP = 'SET_DUNGEONS_DUMP';
+export const SET_DUNGEONS_DUMP = 'SET_DUNGEONS_DUMP';
 
 export const setDungeonsDump = dump => ({
   type: SET_DUNGEONS_DUMP,
