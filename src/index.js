@@ -1,12 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import * as serviceWorker from './serviceWorker';
+import { HashRouter as Router, Route } from 'react-router-dom';
+import { Provider } from 'react-redux';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import store from './store/store';
 
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
-serviceWorker.unregister();
+import Home from './pages/Home/Home';
+
+import DropZone from './components/DropZone/DropZone';
+
+import Title from './elements/Title/Title';
+
+ReactDOM.render(
+  <Provider store={store}>
+    <Router>
+      <DropZone />
+      <Title>Dungeon Loot Browser</Title>
+      <Route path="/" exact component={Home} />
+      <Route path="/:dungeon/:timeFrom/:timeTo" exact component={Home} />
+    </Router>
+  </Provider>, document.getElementById('root'),
+);
