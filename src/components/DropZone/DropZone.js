@@ -6,6 +6,8 @@ import Dropzone from 'react-dropzone';
 
 import { setDungeonsDump as setDungeonsDumpAction } from '../../ducks/dungeonsDump';
 
+import DropZoneWrapper from './DropZone.style';
+
 const mapStateToProps = state => ({
   dungeonsDump: state.get('dungeonsDump'),
 });
@@ -27,14 +29,29 @@ const onDrop = setDungeonsDump => (acceptedFiles) => {
 
 const DropZone = ({ setDungeonsDumpAction: setDungeonsDump, dungeonsDump }) => (
   dungeonsDump === null && (
-  <Dropzone
-    accept=".json"
-    multiple={false}
-    onDrop={onDrop(setDungeonsDump)}
-  >
-123
-
-  </Dropzone>
+    <DropZoneWrapper>
+      <Dropzone
+        accept=".json"
+        multiple={false}
+        onDrop={onDrop(setDungeonsDump)}
+        style={{
+          cursor: 'pointer',
+          top: 0,
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: 'white',
+          fontSize: '34px',
+        }}
+        activeStyle={{
+          backgroundColor: '#effff0',
+        }}
+      >
+        Перетащи дамп сюда, либо клинки в любом месте что бы открыть файловый диалог
+      </Dropzone>
+    </DropZoneWrapper>
   )
 );
 

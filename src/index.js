@@ -6,18 +6,25 @@ import { Provider } from 'react-redux';
 import store from './store/store';
 
 import Home from './pages/Home/Home';
+import Results from './pages/Results/Results';
 
 import DropZone from './components/DropZone/DropZone';
 
+import AppWrapper from './elements/AppWrapper/AppWrapper';
 import Title from './elements/Title/Title';
 
 ReactDOM.render(
-  <Provider store={store}>
-    <Router>
-      <DropZone />
-      <Title>Dungeon Loot Browser</Title>
-      <Route path="/" exact component={Home} />
-      <Route path="/:dungeon/:timeFrom/:timeTo" exact component={Home} />
-    </Router>
-  </Provider>, document.getElementById('root'),
+  <AppWrapper>
+    <Provider store={store}>
+      <Router>
+        <div>
+          <DropZone />
+          <Title>Dungeon Loot Browser</Title>
+          <Route path="/" exact component={Home} />
+          <Route path="/" exact component={Results} />
+        </div>
+      </Router>
+    </Provider>
+  </AppWrapper>,
+  document.getElementById('root'),
 );

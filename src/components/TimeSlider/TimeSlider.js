@@ -28,18 +28,34 @@ class TimeSlider extends Component {
   componentDidMount() {
     const { timeFrom, timeTo, setTimeFilterAction: setTimeFilter } = this.props;
 
+    const formatTooltip = (value) => {
+      const raw = String(value.toFixed(0));
+
+      return raw.length === 1 ? `0${raw}:00` : `${raw}:00`;
+    };
+
     noUiSlider.create(this.sliderRef, {
       start: [
         timeFrom,
         timeTo,
       ],
       step: 1,
+      margin: 1,
       connect: true,
       range: {
         min: 0,
         max: 24,
       },
-      tooltips: [true, true],
+      tooltips: [{
+        to: formatTooltip,
+      }, {
+        to: formatTooltip,
+      }],
+      pips: {
+        mode: 'range',
+        density: 3,
+        filter: () => 0,
+      },
       /* pips: {
         mode: 'values',
         values: Array(25).fill().map((v, i) => i),
