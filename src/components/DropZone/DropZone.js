@@ -93,8 +93,12 @@ class DropZone extends Component {
   }
 }
 
+DropZone.defaultProps = {
+  dungeonsDump: null,
+};
+
 DropZone.propTypes = {
-  dungeonsDump: PropTypes.object.isRequired,
+  dungeonsDump: PropTypes.object,
   availableDungeons: PropTypes.array.isRequired,
   setDungeonsDumpAction: PropTypes.func.isRequired,
   setAvailableDungeonsAction: PropTypes.func.isRequired,
