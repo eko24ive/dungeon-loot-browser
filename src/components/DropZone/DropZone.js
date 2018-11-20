@@ -9,7 +9,7 @@ import { setAvailableDungeons as setAvailableDungeonsAction } from '../../ducks/
 
 import validateDump from '../../utils/validateDump';
 
-import DropZoneWrapper, { Text } from './DropZone.style';
+import DropZoneWrapper, { Text, NotificationsWrapper } from './DropZone.style';
 
 const mapStateToProps = state => ({
   dungeonsDump: state.get('dungeonsDump'),
@@ -104,8 +104,13 @@ class DropZone extends Component {
             Перетащи дамп сюда, либо клинки в любом месте что бы открыть файловый диалог
           </Text>
 
-          {!isDumpValid && <Text error>Это не похоже на корректный дамп. Пожалуйста, используй дамп, который предоставляет <a href="https://t.me/@DungeonMasterRiBot">@DungeonMasterRiBot</a></Text>}
+          {!isDumpValid && <Text error>Это не похоже на корректный дамп</Text>}
         </Dropzone>
+        <NotificationsWrapper>
+          <Text>
+            Дамп можно взять у бота <a href="https://t.me/DungeonMasterRiBot">@DungeonMasterRiBot</a>
+          </Text>
+        </NotificationsWrapper>
       </DropZoneWrapper>
     );
   }

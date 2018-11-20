@@ -14,3 +14,10 @@ export const Text = styled.span`
 
     color: ${props => (props.error ? '#f44336' : '')}
 `;
+
+export const NotificationsWrapper = styled.div`
+  position: absolute;
+  z-index: 1000;
+  bottom: 15px;
+  left: 10px;
+`;
