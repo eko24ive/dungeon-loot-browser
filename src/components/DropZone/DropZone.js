@@ -7,7 +7,9 @@ import Dropzone from 'react-dropzone';
 import { setDungeonsDump as setDungeonsDumpAction } from '../../ducks/dungeonsDump';
 import { setAvailableDungeons as setAvailableDungeonsAction } from '../../ducks/availableDungeons';
 
-import DropZoneWrapper from './DropZone.style';
+import validateDump from '../../utils/validateDump';
+
+import DropZoneWrapper, { Text } from './DropZone.style';
 
 const mapStateToProps = state => ({
   dungeonsDump: state.get('dungeonsDump'),
@@ -20,7 +22,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch);
 
 class DropZone extends Component {
-  static state = {
+  state = {
     isDumpValid: true,
   }
 
@@ -33,21 +35,27 @@ class DropZone extends Component {
       reader.onload = () => {
         const dungeonsDump = JSON.parse(reader.result);
 
-        const availableDungeons = Object.keys(dungeonsDump).map((dungeonName) => {
-          const {
-            name,
-            technicalName,
-          } = dungeonsDump[dungeonName];
+        if (validateDump(dungeonsDump)) {
+          const availableDungeons = Object.keys(dungeonsDump).map((dungeonName) => {
+            const {
+              name,
+              technicalName,
+            } = dungeonsDump[dungeonName];
 
-          return {
-            value: technicalName,
-            label: name,
-          };
-        });
+            return {
+              value: technicalName,
+              label: name,
+            };
+          });
 
 
-        setAvailableDungeons(availableDungeons);
-        setDungeonsDump(dungeonsDump);
+          setAvailableDungeons(availableDungeons);
+          setDungeonsDump(dungeonsDump);
+        } else {
+          this.setState(state => ({
+            isDumpValid: false,
+          }));
+        }
       };
 
       reader.readAsText(file);
@@ -61,6 +69,10 @@ class DropZone extends Component {
       dungeonsDump,
       availableDungeons,
     } = this.props;
+
+    const {
+      isDumpValid,
+    } = this.state;
 
     return (dungeonsDump === null && availableDungeons.length === 0) && (
       <DropZoneWrapper>
@@ -81,12 +93,18 @@ class DropZone extends Component {
             alignItems: 'center',
             backgroundColor: 'white',
             fontSize: '34px',
+            fontFamily: 'arial',
+            flexDirection: 'column',
           }}
           activeStyle={{
             backgroundColor: '#effff0',
           }}
         >
-          Перетащи дамп сюда, либо клинки в любом месте что бы открыть файловый диалог
+          <Text>
+            Перетащи дамп сюда, либо клинки в любом месте что бы открыть файловый диалог
+          </Text>
+
+          {!isDumpValid && <Text error>Это не похоже на корректный дамп. Пожалуйста, используй дамп, который предоставляет <a href="https://t.me/@DungeonMasterRiBot">@DungeonMasterRiBot</a></Text>}
         </Dropzone>
       </DropZoneWrapper>
     );
