@@ -51,8 +51,12 @@ class DropZone extends Component {
 
           setAvailableDungeons(availableDungeons);
           setDungeonsDump(dungeonsDump);
+
+          this.setState(() => ({
+            isDumpValid: true,
+          }));
         } else {
-          this.setState(state => ({
+          this.setState(() => ({
             isDumpValid: false,
           }));
         }
