@@ -6,6 +6,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import getLoot from '../../selectors/getLoot';
 
 import Table from '../../elements/Table/Table';
+import VerticalDelimiter from '../../elements/VerticalDelimiter/VerticalDelimiter';
 
 import ResultsWrapper from './Results.style';
 
@@ -48,6 +49,7 @@ const Results = ({
           />
 
         </Col>
+        <VerticalDelimiter />
         <Col xs={12} md={6}>
           <Table
             data={loot}
