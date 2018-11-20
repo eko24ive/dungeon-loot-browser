@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 import noUiSlider from 'nouislider';
 import 'nouislider/distribute/nouislider.min.css';
 
-
 import { setTimeFilter as setTimeFilterAction } from '../../ducks/timeFilter';
 
 const getTimeFilterValues = timeFilter => ({

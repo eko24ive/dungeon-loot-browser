@@ -6,8 +6,6 @@ import ReactSelect from 'react-select';
 
 import { setActiveDungeon as setActiveDungeonAction } from '../../ducks/activeDungeon';
 
-import SelectWrapper from './Select.style';
-
 const mapStateToProps = state => ({
   activeDungeon: state.get('activeDungeon'),
   availableDungeons: state.get('availableDungeons'),
@@ -23,13 +21,11 @@ const onChange = setActiveDungeon => ({ value }) => {
 };
 
 const Select = ({ setActiveDungeonAction: setActiveDungeon, availableDungeons }) => (
-  <SelectWrapper>
-    <ReactSelect
-      placeholder="Выбери данж"
-      options={availableDungeons}
-      onChange={onChange(setActiveDungeon)}
-    />
-  </SelectWrapper>
+  <ReactSelect
+    placeholder="Выбери данж"
+    options={availableDungeons}
+    onChange={onChange(setActiveDungeon)}
+  />
 );
 
 Select.propTypes = {
