@@ -12,7 +12,7 @@ const mapDispatchToProps = dispatch => bindActionCreators({
 }, dispatch);
 
 const Reset = ({ resetAppAction: resetApp }) => (
-  <Button onClick={resetApp}>Reset</Button>
+  <Button onClick={resetApp}>ОЧИСТИТЬ</Button>
 );
 
 Reset.propTypes = {

@@ -4,10 +4,12 @@ export default styled.button`
     border: 0;
     width: 100%;
     padding: 9px 0;
-    background: #f2f2f2;
+    background: #ff6e6e;
     border-radius: 3px;
     text-transform: uppercase;
     font-size: 17px;
     font-family: arial;
     font-weight: bold;
+    color: white;
+    cursor: pointer;
 `;
