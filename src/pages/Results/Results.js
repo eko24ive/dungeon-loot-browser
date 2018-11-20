@@ -5,9 +5,7 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 
 import getLoot from '../../selectors/getLoot';
 
-import {
-  Table, Row as TableRow, Head, Cell,
-} from '../../elements/Table/Table';
+import Table from '../../elements/Table/Table';
 
 import ResultsWrapper from './Results.style';
 
@@ -28,46 +26,39 @@ const Results = ({
     <Grid fluid>
       <Row>
         <Col xs={12} md={6}>
-          <Table>
-            <Head>
-              <Cell>Предмет</Cell>
-              <Cell>Количество</Cell>
-              <Cell>Шанс</Cell>
-              <Cell>Время</Cell>
-            </Head>
-            {
-            items.map(({
-              name,
-              amount,
-              percent,
-              time,
-              index,
-            }) => (
-              <TableRow key={index}>
-                <Cell>{name}</Cell>
-                <Cell>{amount}</Cell>
-                <Cell>{percent}%</Cell>
-                <Cell>{time}</Cell>
-              </TableRow>
-            ))
-        }
-          </Table>
+          <Table
+            data={items}
+            columns={[{
+              Header: 'Предмет',
+              accessor: 'name',
+              minWidth: 150,
+            }, {
+              Header: 'Кол-во',
+              accessor: 'amount',
+              minWidth: 70,
+            }, {
+              Header: 'Шанс',
+              accessor: 'percent',
+              minWidth: 70,
+            }, {
+              Header: 'Время',
+              accessor: 'time',
+              minWidth: 170,
+            }]}
+          />
+
         </Col>
         <Col xs={12} md={6}>
-          <Table>
-            <Head>
-              <Cell>Лут</Cell>
-              <Cell>Время</Cell>
-            </Head>
-            {
-            loot.map(({ loot: lootItems, time, index }) => (
-              <TableRow key={index}>
-                <Cell>{lootItems}</Cell>
-                <Cell>{time}</Cell>
-              </TableRow>
-            ))
-          }
-          </Table>
+          <Table
+            data={loot}
+            columns={[{
+              Header: 'Лут',
+              accessor: 'loot',
+            }, {
+              Header: 'Время',
+              accessor: 'time',
+            }]}
+          />
         </Col>
       </Row>
     </Grid>

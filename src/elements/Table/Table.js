@@ -1,32 +1,18 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
 
-const TableStyle = styled.table`
-  width: 100%;
-`;
-
-export const Row = styled.tr``;
-
-export const Head = styled(Row)`
-  font-weight: bold;
-`;
-
-export const HeadCell = styled.th;
-
-export const Cell = styled.td`
-  border: 1px solid #333;
-  padding: 5px 15px;
-`;
-
-export const Table = ({ children }) => (
-  <TableStyle>
-    <tbody>
-      {children}
-    </tbody>
-  </TableStyle>
+export default ({ ...props }) => (
+  <ReactTable
+    previousText="<="
+    nextText="=>"
+    loadingText="Загружаем..."
+    pageText="Страница"
+    ofText="из"
+    rowsText="записей"
+    rowsSelectorText="записей на странице"
+    noDataText="Данных нет"
+    defaultPageSize={5}
+    {...props}
+  />
 );
-
-Table.propTypes = {
-  children: PropTypes.node.isRequired,
-};
