@@ -12,7 +12,7 @@ export default createSelector(
     getTimeFilter,
   ],
   (activeDugneon, dump, timeFilter) => {
-    if (activeDugneon) {
+    if (activeDugneon !== null && dump !== null) {
       const dungeonForwards = dump[activeDugneon].forwards;
 
       const timeFrom = timeFilter.get('timeFrom');

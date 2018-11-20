@@ -74,7 +74,7 @@ class DropZone extends Component {
       isDumpValid,
     } = this.state;
 
-    return (dungeonsDump === null && availableDungeons.length === 0) && (
+    return (dungeonsDump === null || availableDungeons.length === 0) && (
       <DropZoneWrapper>
         <Dropzone
           accept=".json"

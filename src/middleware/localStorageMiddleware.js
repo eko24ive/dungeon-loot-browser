@@ -2,6 +2,8 @@ import { SET_TIME_FILTER } from '../ducks/timeFilter';
 import { SET_DUNGEONS_DUMP } from '../ducks/dungeonsDump';
 import { SET_DUNGEON } from '../ducks/activeDungeon';
 import { SET_AVAILABLE_DUNGEONS } from '../ducks/availableDungeons';
+import { RESET_APP } from '../ducks/resetApp';
+
 
 export default ({ getState }) => next => (action) => {
   const result = next(action);
@@ -21,6 +23,10 @@ export default ({ getState }) => next => (action) => {
       return result;
     case SET_AVAILABLE_DUNGEONS:
       localStorage.setItem('availableDungeons', JSON.stringify(getState().get('availableDungeons')));
+
+      return result;
+    case RESET_APP:
+      localStorage.clear();
 
       return result;
     default:

@@ -10,7 +10,7 @@ import timeFilterReducer from '../ducks/timeFilter';
 import dungeonsDumpReducer from '../ducks/dungeonsDump';
 import availableDungeonsReducer from '../ducks/availableDungeons';
 
-const initialState = {
+export const initialState = {
   activeDungeon: null,
   timeFilter: Map({ timeFrom: 0, timeTo: 24 }),
   dungeonsDump: null,
