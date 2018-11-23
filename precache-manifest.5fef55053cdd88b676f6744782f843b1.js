@@ -4,8 +4,8 @@ self.__precacheManifest = [
     "url": "/dungeon-loot-browser/static/js/runtime~main.76fefd7b.js"
   },
   {
-    "revision": "4de1e48e55293742ac5f",
-    "url": "/dungeon-loot-browser/static/js/main.4de1e48e.chunk.js"
+    "revision": "557f5f8b11bc7f56793b",
+    "url": "/dungeon-loot-browser/static/js/main.557f5f8b.chunk.js"
   },
   {
     "revision": "9ed1fbbdf08ea454077c",
@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/dungeon-loot-browser/static/css/1.913ee4ed.chunk.css"
   },
   {
-    "revision": "936c91b9ec29daff8e5951c6cb0fc69c",
+    "revision": "7c11763f66eaf6191bdecb262bcd0acc",
     "url": "/dungeon-loot-browser/index.html"
   }
 ];
