@@ -6,6 +6,7 @@ import Dropzone from 'react-dropzone';
 
 import { setDungeonsDump as setDungeonsDumpAction } from '../../ducks/dungeonsDump';
 import { setAvailableDungeons as setAvailableDungeonsAction } from '../../ducks/availableDungeons';
+import { setActiveDungeon as setActiveDungeonAction } from '../../ducks/activeDungeon';
 
 import validateDump from '../../utils/validateDump';
 
@@ -19,6 +20,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => bindActionCreators({
   setDungeonsDumpAction,
   setAvailableDungeonsAction,
+  setActiveDungeonAction,
 }, dispatch);
 
 class DropZone extends Component {
@@ -29,6 +31,7 @@ class DropZone extends Component {
   onDrop = ({
     setDungeonsDump,
     setAvailableDungeons,
+    setActiveDungeon,
   }) => (acceptedFiles) => {
     acceptedFiles.forEach((file) => {
       const reader = new FileReader();
@@ -51,6 +54,7 @@ class DropZone extends Component {
 
           setAvailableDungeons(availableDungeons);
           setDungeonsDump(dungeonsDump);
+          setActiveDungeon(availableDungeons[0].value);
 
           this.setState(() => ({
             isDumpValid: true,
@@ -70,6 +74,7 @@ class DropZone extends Component {
     const {
       setDungeonsDumpAction: setDungeonsDump,
       setAvailableDungeonsAction: setAvailableDungeons,
+      setActiveDungeonAction: setActiveDungeon,
       dungeonsDump,
       availableDungeons,
     } = this.props;
@@ -86,6 +91,7 @@ class DropZone extends Component {
           onDrop={this.onDrop({
             setDungeonsDump,
             setAvailableDungeons,
+            setActiveDungeon,
           })}
           style={{
             cursor: 'pointer',
@@ -129,6 +135,7 @@ DropZone.propTypes = {
   availableDungeons: PropTypes.array.isRequired,
   setDungeonsDumpAction: PropTypes.func.isRequired,
   setAvailableDungeonsAction: PropTypes.func.isRequired,
+  setActiveDungeonAction: PropTypes.func.isRequired,
 };
 
 export default connect(

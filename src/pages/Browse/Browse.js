@@ -2,13 +2,15 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import { Grid, Row, Col } from 'react-flexbox-grid';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import getLoot from '../../selectors/getLoot';
 
 import Table from '../../elements/Table/Table';
 import VerticalDelimiter from '../../elements/VerticalDelimiter/VerticalDelimiter';
 
-import ResultsWrapper from './Results.style';
+import BrowseWrapper from './Browse.style';
 
 const mapStateToProps = (state) => {
   const { items, loot } = getLoot(state);
@@ -16,14 +18,16 @@ const mapStateToProps = (state) => {
   return {
     items,
     loot,
+    activeDungeon: state.get('activeDungeon'),
   };
 };
 
-const Results = ({
+const Browse = ({
   items,
   loot,
+  activeDungeon,
 }) => (
-  <ResultsWrapper>
+  <BrowseWrapper>
     <Grid fluid>
       <Row>
         <Col xs={12} md={6}>
@@ -41,10 +45,19 @@ const Results = ({
               Header: 'Шанс',
               accessor: 'percent',
               minWidth: 70,
+              // eslint-disable-next-line react/prop-types
+              Cell: ({ value }) => `${value}%`,
             }, {
-              Header: 'Время',
-              accessor: 'time',
-              minWidth: 170,
+              Header: 'Просмотреть',
+              accessor: 'name',
+              id: 'itemLink',
+              sortable: false,
+              // eslint-disable-next-line react/prop-types
+              Cell: ({ value }) => (
+                <Link to={`browse/${activeDungeon}/${value}`}>
+                  <FontAwesomeIcon icon="eye" />
+                </Link>
+              ),
             }]}
           />
 
@@ -57,6 +70,11 @@ const Results = ({
               Header: 'Лут',
               accessor: 'loot',
             }, {
+              Header: 'Предмет',
+              accessor: 'item',
+              // eslint-disable-next-line react/prop-types
+              Cell: ({ value }) => (value || 'Ничего'),
+            }, {
               Header: 'Время',
               accessor: 'time',
             }]}
@@ -64,14 +82,15 @@ const Results = ({
         </Col>
       </Row>
     </Grid>
-  </ResultsWrapper>
+  </BrowseWrapper>
 );
 
-Results.propTypes = {
+Browse.propTypes = {
   items: PropTypes.array.isRequired,
   loot: PropTypes.array.isRequired,
+  activeDungeon: PropTypes.string.isRequired,
 };
 
 export default connect(
   mapStateToProps,
-)(Results);
+)(Browse);

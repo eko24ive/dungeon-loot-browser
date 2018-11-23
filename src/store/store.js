@@ -18,6 +18,8 @@ export const initialState = {
   availableDungeons: [],
 };
 
+const defaultState = Object.assign({}, initialState);
+
 const rootReducer = combineReducers({
   activeDungeon: activeDungeonReducer,
   timeFilter: timeFilterReducer,
@@ -27,22 +29,22 @@ const rootReducer = combineReducers({
 
 const getInitialState = () => {
   if (localStorage.getItem('timeFilter')) {
-    initialState.timeFilter = fromJS(JSON.parse(localStorage.getItem('timeFilter')));
+    defaultState.timeFilter = fromJS(JSON.parse(localStorage.getItem('timeFilter')));
   }
 
   if (localStorage.getItem('dungeonsDump')) {
-    initialState.dungeonsDump = JSON.parse(localStorage.getItem('dungeonsDump'));
+    defaultState.dungeonsDump = JSON.parse(localStorage.getItem('dungeonsDump'));
   }
 
   if (localStorage.getItem('activeDungeon')) {
-    initialState.activeDungeon = localStorage.getItem('activeDungeon');
+    defaultState.activeDungeon = localStorage.getItem('activeDungeon');
   }
 
   if (localStorage.getItem('availableDungeons')) {
-    initialState.availableDungeons = JSON.parse(localStorage.getItem('availableDungeons'));
+    defaultState.availableDungeons = JSON.parse(localStorage.getItem('availableDungeons'));
   }
 
-  return Map(initialState);
+  return Map(defaultState);
 };
 
 const middleware = applyMiddleware(localStorageMiddleware);

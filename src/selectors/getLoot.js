@@ -30,6 +30,7 @@ export default createSelector(
       forwardsInTimeFrame.forEach((forward, index) => {
         loot.push({
           loot: forward.loot,
+          item: forward.item,
           time: forward.time,
           index,
         });

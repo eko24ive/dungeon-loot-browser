@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import { HashRouter as Router, Route } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
+// eslint-disable-next-line no-unused-vars
+import fontAwesome from './utils/fontAwesome';
+
 import store from './store/store';
 
 import Home from './pages/Home/Home';
-import Results from './pages/Results/Results';
+import Browse from './pages/Browse/Browse';
 
 import DropZone from './components/DropZone/DropZone';
 
@@ -21,7 +24,7 @@ ReactDOM.render(
           <DropZone />
           <Title>Dungeon Loot Browser</Title>
           <Route path="/" exact component={Home} />
-          <Route path="/" exact component={Results} />
+          <Route path="/browse/:dungeon/:item" exact component={Browse} />
         </div>
       </Router>
     </Provider>
