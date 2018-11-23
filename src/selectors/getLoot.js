@@ -15,13 +15,13 @@ export default createSelector(
     if (activeDugneon !== null && dump !== null) {
       const dungeonForwards = dump[activeDugneon].forwards;
 
-      const timeFrom = timeFilter.get('timeFrom');
-      const timeTo = timeFilter.get('timeTo');
+      const [timeFrom] = timeFilter.get('timeFrom').split(':');
+      const [timeTo] = timeFilter.get('timeTo').split(':');
 
       const forwardsInTimeFrame = dungeonForwards.filter(({ unixTime }) => {
         const hours = moment(unixTime).hours();
 
-        return timeFrom <= hours && hours <= timeTo;
+        return Number(timeFrom) <= hours && hours <= Number(timeTo);
       });
 
       const items = {};
