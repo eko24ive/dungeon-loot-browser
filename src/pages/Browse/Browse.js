@@ -31,6 +31,9 @@ const Browse = ({
               // eslint-disable-next-line react/prop-types
               Cell: ({ value }) => (value || 'Ничего'),
             }, {
+              Header: 'Время',
+              accessor: 'time',
+            }, {
               Header: 'Лут',
               accessor: 'loot',
             }, {
@@ -39,12 +42,6 @@ const Browse = ({
             }, {
               Header: '📦',
               accessor: 'materials',
-            }, {
-              Header: 'Время',
-              accessor: 'time',
-            }, {
-              Header: 'Время',
-              accessor: 'time',
             }]}
           />
 
