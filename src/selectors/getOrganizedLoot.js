@@ -1,36 +1,24 @@
 import { createSelector } from 'reselect';
-import moment from 'moment';
 
-const getActiveDungeon = state => state.get('activeDungeon');
-const getTimeFilter = state => state.get('timeFilter');
-const getDungeonsDump = state => state.get('dungeonsDump');
+import forwardsInTimeFrame from './getForwardsInTimeFrame';
+
+const getForwardsInTimeFrame = state => forwardsInTimeFrame(state);
 
 export default createSelector(
   [
-    getActiveDungeon,
-    getDungeonsDump,
-    getTimeFilter,
+    getForwardsInTimeFrame,
   ],
-  (activeDugneon, dump, timeFilter) => {
-    if (activeDugneon !== null && dump !== null) {
-      const dungeonForwards = dump[activeDugneon].forwards;
-
-      const [timeFrom] = timeFilter.get('timeFrom').split(':');
-      const [timeTo] = timeFilter.get('timeTo').split(':');
-
-      const forwardsInTimeFrame = dungeonForwards.filter(({ unixTime }) => {
-        const hours = moment(unixTime).hours();
-
-        return Number(timeFrom) <= hours && hours <= Number(timeTo);
-      });
-
+  (forwards) => {
+    if (forwards.length > 0) {
       const items = {};
       const loot = [];
 
-      forwardsInTimeFrame.forEach((forward, index) => {
+      forwards.forEach((forward, index) => {
         loot.push({
           loot: forward.loot,
           item: forward.item,
+          caps: forward.caps,
+          materials: forward.materials,
           time: forward.time,
           index,
         });

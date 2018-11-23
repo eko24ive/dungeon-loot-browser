@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -63,14 +63,24 @@ const TimeInput = ({
   timeFromValues,
   timeToValues,
 }) => (
-  <Row>
-    <Col xs={6} md={6}>
-      <Select
-        name="timeFrom"
-        onChange={onChange(setTimeFilter)}
-        defaultValue={timeFrom}
-      >
-        {
+  <Fragment>
+
+    <Row>
+      <Col xs={6} md={6}>
+      Начальное время
+      </Col>
+      <Col xs={6} md={6}>
+      Конечное время
+      </Col>
+    </Row>
+    <Row>
+      <Col xs={6} md={6}>
+        <Select
+          name="timeFrom"
+          onChange={onChange(setTimeFilter)}
+          defaultValue={timeFrom}
+        >
+          {
       timeFromValues.map(time => (
         <option
           key={`time-from-item-${time.value}`}
@@ -81,15 +91,15 @@ const TimeInput = ({
         </option>
       ))
     }
-      </Select>
-    </Col>
-    <Col xs={6} md={6}>
-      <Select
-        name="timeTo"
-        onChange={onChange(setTimeFilter)}
-        defaultValue={timeTo}
-      >
-        {
+        </Select>
+      </Col>
+      <Col xs={6} md={6}>
+        <Select
+          name="timeTo"
+          onChange={onChange(setTimeFilter)}
+          defaultValue={timeTo}
+        >
+          {
       timeToValues.map(time => (
         <option
           key={`time-to-item-${time.value}`}
@@ -100,10 +110,10 @@ const TimeInput = ({
         </option>
       ))
     }
-      </Select>
-    </Col>
-  </Row>
-
+        </Select>
+      </Col>
+    </Row>
+  </Fragment>
 );
 
 TimeInput.propTypes = {

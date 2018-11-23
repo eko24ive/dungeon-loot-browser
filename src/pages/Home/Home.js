@@ -5,12 +5,12 @@ import { Grid, Row, Col } from 'react-flexbox-grid';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import getLoot from '../../selectors/getLoot';
+import getOrganizedLoot from '../../selectors/getOrganizedLoot';
 
 import Table from '../../elements/Table/Table';
 
 import TimeInput from '../../components/TimeInput/TimeInput';
-import Select from '../../components/Select/Select';
+import DungeonSelect from '../../components/DungeonSelect/DungeonSelect';
 import Reset from '../../components/Reset/Reset';
 
 import VerticalDelimiter from '../../elements/VerticalDelimiter/VerticalDelimiter';
@@ -20,7 +20,7 @@ import HomeWrapper from './Home.style';
 
 
 const mapStateToProps = (state) => {
-  const { items, loot } = getLoot(state);
+  const { items, loot } = getOrganizedLoot(state);
 
   return {
     items,
@@ -44,7 +44,14 @@ const Home = ({
       <VerticalDelimiter desktop />
       <Row>
         <Col xs={12} md={6}>
-          <Select />
+          Подеземелье
+        </Col>
+        <VerticalDelimiter />
+        <Col xs={12} md={6} />
+      </Row>
+      <Row>
+        <Col xs={12} md={6}>
+          <DungeonSelect />
         </Col>
         <VerticalDelimiter />
         <Col xs={12} md={6}>
@@ -85,7 +92,6 @@ const Home = ({
               ),
             }]}
           />
-
         </Col>
         <VerticalDelimiter />
         <Col xs={12} md={6}>
@@ -99,6 +105,12 @@ const Home = ({
               accessor: 'item',
               // eslint-disable-next-line react/prop-types
               Cell: ({ value }) => (value || 'Ничего'),
+            }, {
+              Header: '🕳',
+              accessor: 'caps',
+            }, {
+              Header: '📦',
+              accessor: 'materials',
             }, {
               Header: 'Время',
               accessor: 'time',
