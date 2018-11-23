@@ -3,21 +3,21 @@ import { initialState } from '../store/store';
 
 export const SET_TIME_FILTER = 'SET_TIME_FILTER';
 
-export const setTimeFilter = ({
-  timeFrom,
-  timeTo,
-}) => ({
+export const setTimeFilter = (
+  key,
+  value,
+) => ({
   type: SET_TIME_FILTER,
-  timeFrom,
-  timeTo,
+  key,
+  value,
 });
 
 export default function (state, action) {
-  const { timeFrom, timeTo } = action;
+  const { key, value } = action;
 
   switch (action.type) {
     case SET_TIME_FILTER:
-      return state.set('timeFrom', timeFrom).set('timeTo', timeTo);
+      return state.set(key, value);
     case RESET_APP:
       return initialState.timeFilter;
     default:

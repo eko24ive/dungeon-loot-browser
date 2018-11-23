@@ -12,4 +12,5 @@ export default styled.button`
     font-weight: bold;
     color: white;
     cursor: pointer;
+    border: 1px solid #ff6e6e;
 `;

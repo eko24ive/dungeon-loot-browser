@@ -1,0 +1,389 @@
+export default [{
+  value: '00:00',
+  label: '00:00',
+  weight: 0.1,
+}, {
+  value: '00:15',
+  label: '00:15',
+  weight: 0.2,
+}, {
+  value: '00:30',
+  label: '00:30',
+  weight: 0.3,
+}, {
+  value: '00:45',
+  label: '00:45',
+  weight: 0.4,
+}, {
+  value: '01:00',
+  label: '01:00',
+  weight: 1.1,
+}, {
+  value: '01:15',
+  label: '01:15',
+  weight: 1.2,
+}, {
+  value: '01:30',
+  label: '01:30',
+  weight: 1.3,
+}, {
+  value: '01:45',
+  label: '01:45',
+  weight: 1.4,
+}, {
+  value: '02:00',
+  label: '02:00',
+  weight: 2.1,
+}, {
+  value: '02:15',
+  label: '02:15',
+  weight: 2.2,
+}, {
+  value: '02:30',
+  label: '02:30',
+  weight: 2.3,
+}, {
+  value: '02:45',
+  label: '02:45',
+  weight: 2.4,
+}, {
+  value: '03:00',
+  label: '03:00',
+  weight: 3.1,
+}, {
+  value: '03:15',
+  label: '03:15',
+  weight: 3.2,
+}, {
+  value: '03:30',
+  label: '03:30',
+  weight: 3.3,
+}, {
+  value: '03:45',
+  label: '03:45',
+  weight: 3.4,
+}, {
+  value: '04:00',
+  label: '04:00',
+  weight: 4.1,
+}, {
+  value: '04:15',
+  label: '04:15',
+  weight: 4.2,
+}, {
+  value: '04:30',
+  label: '04:30',
+  weight: 4.3,
+}, {
+  value: '04:45',
+  label: '04:45',
+  weight: 4.4,
+}, {
+  value: '05:00',
+  label: '05:00',
+  weight: 5.1,
+}, {
+  value: '05:15',
+  label: '05:15',
+  weight: 5.2,
+}, {
+  value: '05:30',
+  label: '05:30',
+  weight: 5.3,
+}, {
+  value: '05:45',
+  label: '05:45',
+  weight: 5.4,
+}, {
+  value: '06:00',
+  label: '06:00',
+  weight: 6.1,
+}, {
+  value: '06:15',
+  label: '06:15',
+  weight: 6.2,
+}, {
+  value: '06:30',
+  label: '06:30',
+  weight: 6.3,
+}, {
+  value: '06:45',
+  label: '06:45',
+  weight: 6.4,
+}, {
+  value: '07:00',
+  label: '07:00',
+  weight: 7.1,
+}, {
+  value: '07:15',
+  label: '07:15',
+  weight: 7.2,
+}, {
+  value: '07:30',
+  label: '07:30',
+  weight: 7.3,
+}, {
+  value: '07:45',
+  label: '07:45',
+  weight: 7.4,
+}, {
+  value: '08:00',
+  label: '08:00',
+  weight: 8.1,
+}, {
+  value: '08:15',
+  label: '08:15',
+  weight: 8.2,
+}, {
+  value: '08:30',
+  label: '08:30',
+  weight: 8.3,
+}, {
+  value: '08:45',
+  label: '08:45',
+  weight: 8.4,
+}, {
+  value: '09:00',
+  label: '09:00',
+  weight: 9.1,
+}, {
+  value: '09:15',
+  label: '09:15',
+  weight: 9.2,
+}, {
+  value: '09:30',
+  label: '09:30',
+  weight: 9.3,
+}, {
+  value: '09:45',
+  label: '09:45',
+  weight: 9.4,
+}, {
+  value: '10:00',
+  label: '10:00',
+  weight: 10.1,
+}, {
+  value: '10:15',
+  label: '10:15',
+  weight: 10.2,
+}, {
+  value: '10:30',
+  label: '10:30',
+  weight: 10.3,
+}, {
+  value: '10:45',
+  label: '10:45',
+  weight: 10.4,
+}, {
+  value: '11:00',
+  label: '11:00',
+  weight: 11.1,
+}, {
+  value: '11:15',
+  label: '11:15',
+  weight: 11.2,
+}, {
+  value: '11:30',
+  label: '11:30',
+  weight: 11.3,
+}, {
+  value: '11:45',
+  label: '11:45',
+  weight: 11.4,
+}, {
+  value: '12:00',
+  label: '12:00',
+  weight: 12.1,
+}, {
+  value: '12:15',
+  label: '12:15',
+  weight: 12.2,
+}, {
+  value: '12:30',
+  label: '12:30',
+  weight: 12.3,
+}, {
+  value: '12:45',
+  label: '12:45',
+  weight: 12.4,
+}, {
+  value: '13:00',
+  label: '13:00',
+  weight: 13.1,
+}, {
+  value: '13:15',
+  label: '13:15',
+  weight: 13.2,
+}, {
+  value: '13:30',
+  label: '13:30',
+  weight: 13.3,
+}, {
+  value: '13:45',
+  label: '13:45',
+  weight: 13.4,
+}, {
+  value: '14:00',
+  label: '14:00',
+  weight: 14.1,
+}, {
+  value: '14:15',
+  label: '14:15',
+  weight: 14.2,
+}, {
+  value: '14:30',
+  label: '14:30',
+  weight: 14.3,
+}, {
+  value: '14:45',
+  label: '14:45',
+  weight: 14.4,
+}, {
+  value: '15:00',
+  label: '15:00',
+  weight: 15.1,
+}, {
+  value: '15:15',
+  label: '15:15',
+  weight: 15.2,
+}, {
+  value: '15:30',
+  label: '15:30',
+  weight: 15.3,
+}, {
+  value: '15:45',
+  label: '15:45',
+  weight: 15.4,
+}, {
+  value: '16:00',
+  label: '16:00',
+  weight: 16.1,
+}, {
+  value: '16:15',
+  label: '16:15',
+  weight: 16.2,
+}, {
+  value: '16:30',
+  label: '16:30',
+  weight: 16.3,
+}, {
+  value: '16:45',
+  label: '16:45',
+  weight: 16.4,
+}, {
+  value: '17:00',
+  label: '17:00',
+  weight: 17.1,
+}, {
+  value: '17:15',
+  label: '17:15',
+  weight: 17.2,
+}, {
+  value: '17:30',
+  label: '17:30',
+  weight: 17.3,
+}, {
+  value: '17:45',
+  label: '17:45',
+  weight: 17.4,
+}, {
+  value: '18:00',
+  label: '18:00',
+  weight: 18.1,
+}, {
+  value: '18:15',
+  label: '18:15',
+  weight: 18.2,
+}, {
+  value: '18:30',
+  label: '18:30',
+  weight: 18.3,
+}, {
+  value: '18:45',
+  label: '18:45',
+  weight: 18.4,
+}, {
+  value: '19:00',
+  label: '19:00',
+  weight: 19.1,
+}, {
+  value: '19:15',
+  label: '19:15',
+  weight: 19.2,
+}, {
+  value: '19:30',
+  label: '19:30',
+  weight: 19.3,
+}, {
+  value: '19:45',
+  label: '19:45',
+  weight: 19.4,
+}, {
+  value: '20:00',
+  label: '20:00',
+  weight: 20.1,
+}, {
+  value: '20:15',
+  label: '20:15',
+  weight: 20.2,
+}, {
+  value: '20:30',
+  label: '20:30',
+  weight: 20.3,
+}, {
+  value: '20:45',
+  label: '20:45',
+  weight: 20.4,
+}, {
+  value: '21:00',
+  label: '21:00',
+  weight: 21.1,
+}, {
+  value: '21:15',
+  label: '21:15',
+  weight: 21.2,
+}, {
+  value: '21:30',
+  label: '21:30',
+  weight: 21.3,
+}, {
+  value: '21:45',
+  label: '21:45',
+  weight: 21.4,
+}, {
+  value: '22:00',
+  label: '22:00',
+  weight: 22.1,
+}, {
+  value: '22:15',
+  label: '22:15',
+  weight: 22.2,
+}, {
+  value: '22:30',
+  label: '22:30',
+  weight: 22.3,
+}, {
+  value: '22:45',
+  label: '22:45',
+  weight: 22.4,
+}, {
+  value: '23:00',
+  label: '23:00',
+  weight: 23.1,
+}, {
+  value: '23:15',
+  label: '23:15',
+  weight: 23.2,
+}, {
+  value: '23:30',
+  label: '23:30',
+  weight: 23.3,
+}, {
+  value: '23:45',
+  label: '23:45',
+  weight: 23.4,
+}, {
+  value: '24:00',
+  label: '24:00',
+  weight: 24.1,
+}];

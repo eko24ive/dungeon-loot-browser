@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { createStore, compose, applyMiddleware } from 'redux';
 import { Map, fromJS } from 'immutable';
 
@@ -12,7 +13,7 @@ import availableDungeonsReducer from '../ducks/availableDungeons';
 
 export const initialState = {
   activeDungeon: null,
-  timeFilter: Map({ timeFrom: 0, timeTo: 24 }),
+  timeFilter: Map({ timeFrom: '00:00', timeTo: '24:00' }),
   dungeonsDump: null,
   availableDungeons: [],
 };
@@ -46,6 +47,12 @@ const getInitialState = () => {
 
 const middleware = applyMiddleware(localStorageMiddleware);
 
-export default createStore(rootReducer, getInitialState(), compose(
+const composeEnhancers = typeof window === 'object'
+  && window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__
+  ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+    // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+  }) : compose;
+
+export default createStore(rootReducer, getInitialState(), composeEnhancers(
   middleware,
 ));

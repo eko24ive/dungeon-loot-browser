@@ -2,7 +2,7 @@ import React from 'react';
 import { Grid, Row, Col } from 'react-flexbox-grid';
 
 
-import TimeSlider from '../../components/TimeSlider/TimeSlider';
+import TimeInput from '../../components/TimeInput/TimeInput';
 import Select from '../../components/Select/Select';
 import Reset from '../../components/Reset/Reset';
 
@@ -15,10 +15,10 @@ const Home = () => (
     <Grid fluid>
       <Row>
         <Col xs={12} md={12}>
-          <TimeSlider />
+          <TimeInput />
         </Col>
       </Row>
-      <VerticalDelimiter />
+      <VerticalDelimiter desktop />
       <Row>
         <Col xs={12} md={6}>
           <Select />
