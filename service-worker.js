@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/dungeon-loot-browser/precache-manifest.5fef55053cdd88b676f6744782f843b1.js"
+  "/dungeon-loot-browser/precache-manifest.b64b6333fe81432ac2cc0ed1b938f1ff.js"
 );
 
 workbox.clientsClaim();
