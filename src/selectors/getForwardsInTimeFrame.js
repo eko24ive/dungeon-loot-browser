@@ -1,7 +1,7 @@
 import { createSelector } from 'reselect';
 import moment from 'moment';
 
-const getActiveDungeon = state => state.get('activeDungeon');
+const getActiveDungeon = (state, dungeon) => dungeon || state.get('activeDungeon');
 const getTimeFilter = state => state.get('timeFilter');
 const getDungeonsDump = state => state.get('dungeonsDump');
 

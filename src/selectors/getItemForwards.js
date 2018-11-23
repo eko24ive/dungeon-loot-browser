@@ -2,8 +2,8 @@ import { createSelector } from 'reselect';
 
 import forwardsInTimeFrame from './getForwardsInTimeFrame';
 
-const getForwardsInTimeFrame = state => forwardsInTimeFrame(state);
-const getItem = (state, item) => item;
+const getForwardsInTimeFrame = (state, props) => forwardsInTimeFrame(state, props.dungeon);
+const getItem = (state, props) => props.item;
 
 export default createSelector(
   [

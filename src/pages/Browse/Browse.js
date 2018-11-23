@@ -10,7 +10,10 @@ import Table from '../../elements/Table/Table';
 import BrowseWrapper from './Browse.style';
 
 const mapStateToProps = (state, { match }) => ({
-  forwards: getItemForwards(state, match.params.item),
+  forwards: getItemForwards(state, {
+    item: match.params.item,
+    dungeon: match.params.dungeon,
+  }),
 });
 
 const Browse = ({
@@ -19,7 +22,7 @@ const Browse = ({
   <BrowseWrapper>
     <Grid fluid>
       <Row>
-        <Col xs={12} md={6}>
+        <Col md={12}>
           <Table
             data={forwards}
             columns={[{
